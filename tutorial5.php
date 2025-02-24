@@ -1,5 +1,7 @@
 <?php
-$fonts = "arial";
+$fonts = "vardana";
+$bgcolor = "#FB8637";
+$fontcolor = "FC8C41";
 ?>
 
 <!DOCTYPE html>
@@ -7,9 +9,10 @@ $fonts = "arial";
     <head>
         <title>php syntax</title>
         <style>
+         body{font-family:<?php echo $fonts;?>}
             .maincontent{min-height: 400px;padding: 20px;}
             .phpcoding{width:900px;margin: auto;background: <?php echo"#ddd"?>;}
-            .headeroption, .footeroption{background: red;color: #fff;text-align:center;padding: 20px; margin: 0;}
+            .headeroption, .footeroption{background: <?php echo $bgcolor;?>; color:<?php echo $fontcolor;?>;text-align:center;padding: 20px; margin: 0;}
         </style>
     </head>
     <body>
