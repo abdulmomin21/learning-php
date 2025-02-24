@@ -1,3 +1,7 @@
+<?php
+$fonts = "arial";
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,15 +21,15 @@
 
             <section class="maincontent">
                 <?php
-                echo"i love php";
+                $a = 5;
+                $b = 10;
+                $c = $a + $b;
+                echo "total value =".$c. " ok fine";
                 ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
             </section>
-
-            
-
 
         </div>
     </body>
