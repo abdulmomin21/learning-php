@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>php syntax</title>
+        <style>
+            .maincontent{min-height: 400px;padding: 20px;}
+            .phpcoding{width:900px;margin: auto;background: <?php echo"#ddd"?>;}
+            .headeroption, .footeroption{background: red;color: #fff;text-align:center;padding: 20px; margin: 0;}
+        </style>
+    </head>
+    <body>
+        <div class="phpcoding">
+            <section class="headeroption">
+                <h2>php fundamantal training</h2>
+
+            </section>
+
+            <section class="maincontent">
+                <hr>
+                function
+                <hr>
+              <?php
+              /* $x = array("lamiya","arju","bithi","mahbuba","nusrat","urmi","mansura");
+               sort($x);
+               $length = count($x);
+               for($i=0; $i<$length; $i++){
+                echo $x[$i];
+                echo "<br>";
+               } */
+               
+             /*  $x = array(2,45,3,6,55,4,6,7,8);
+               sort($x);
+               $length = count($x);
+               for($i=0; $i<$length; $i++){
+                echo $x[$i];
+                echo "<br>";
+               } */
+              /* $x = array("lamiya","arju","bithi","mahbuba","nusrat","urmi","mansura");
+               rsort($x);
+               $length = count($x);
+               for($i=0; $i<$length; $i++){
+                echo $x[$i];
+                echo "<br>";
+               } */
+             /*  $x = array("lamiya"=>"20","arju"=>"30","bithi"=>"25","mahbuba"=>"35","nusrat"=>"15");
+               asort($x);
+               $length = count($x);
+               foreach($x as $key => $value){
+                echo "key = ".$key. "value = " .$value;
+                echo "<br>";
+               } */
+               $x = array("lamiya"=>"20","arju"=>"30","bithi"=>"25","mahbuba"=>"35","nusrat"=>"15");
+               ksort($x);
+               $length = count($x);
+               foreach($x as $key => $value){
+                echo "key = ".$key. "value = " .$value;
+                echo "<br>";
+               }
+               
+               ?>
+            </section>
+            <section class="footeroption">
+                <h2><?php echo"www.google.com //momin"?></h2>
+            </section>
+
+            
+
+
+        </div>
+    </body>
+</html>
