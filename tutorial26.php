@@ -27,6 +27,7 @@
                 }
                 sum();
                 echo $z; */
+                //ami kon file e aci seta show korbe
                 echo $_SERVER['PHP_SELF'];
                 // site er nam dekhar jonno server name
                // echo $_SERVER['SERVER_NAME'];
