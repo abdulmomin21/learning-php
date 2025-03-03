@@ -1,6 +1,3 @@
-<?php include '../New Folder/momin.php'?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,7 +27,7 @@
                 </span>
                 <hr>
                     <?php
-                   
+                     echo readfile("momin.txt");
                     ?>
                 
             </section>
