@@ -22,7 +22,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                eror reporting
+                php exception
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
