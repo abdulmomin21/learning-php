@@ -32,19 +32,14 @@ setcookie('visited', "", time() -3600);
                 </span>
                 <hr>
                   <?php
-                  function numcheck($num){
-                    if($num > 1){
-                        throw new exception ("my name is momoin");
-                    }
-                    return true;
-                  }
-                  try{
-                    numcheck(2);
-                    echo "my name is imon";
-                  }
-                  catch(exception $e){
-                    echo "message: ".$e->getmessage();
-                  }
+                /*  $mystr = "we are learning php";
+                 print_r(explode(" ", $mystr)); */
+                /* $mystr = "we are learning php";
+                 $str = explode(" ", $mystr);
+                 echo $str[3]; */
+
+                 $mystr = array ("we", "are", "learning", "php");
+                 echo implode (", ", $mystr);
                   ?>
                  
                 
