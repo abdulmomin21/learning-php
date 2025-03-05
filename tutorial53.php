@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_count_values
+                array diff
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -33,12 +33,27 @@ setcookie('visited', "", time() -3600);
                 </span>
                 <hr>
                 <?php
-                $name = array("momin","mamun","kiron","momin","momin","momin","momin","mamin","mamin",);
-                $age = array ("30","30","30","30","24","20","20","20","20","20","33","33",);
-
-               print("<pre>");
-               print_r(array_count_values($name));
-               print ("</pre>");
+                $array_one = array(
+                    "a" =>"red",
+                    "b" =>"green",
+                    "c" =>"yellow",
+                    "d" =>"white"
+                );
+                $array_two = array(
+                    "a" =>"red",
+                    "b" =>"green",
+                    "c" =>"yellow",
+                    "d" =>""
+                );$array_three = array(
+                    "a" =>"red",
+                    "b" =>"black",
+                    "c" =>"purple",
+                    "d" =>"blue"
+                );
+                $differ = array_diff($array_one, $array_two, $array_three);
+                print("<pre>");
+                print_r($differ);
+                print("</pre>");
                 ?>
             </section>
             <section class="footeroption">
