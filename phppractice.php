@@ -11,6 +11,7 @@ setcookie('visited', "", time() -3600);
             .maincontent{min-height: 400px;padding: 20px;}
             .phpcoding{width:900px;margin: auto;background: <?php echo"#ddd"?>;}
             .headeroption, .footeroption{background: red;color: #fff;text-align:center;padding: 20px; margin: 0;}
+            input[type= "text"]{width:250px}
         </style>
     </head>
     <body>
@@ -22,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                Explode & Implode Function
+                case change
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -31,11 +32,35 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-                <?php
-                $mystr = "we are learning php";
-                print_r(explode(" ", $mystr));
+                <!-- <?php
+                /* if(isset($_POST['text'])){
+                    $txt = $_POST['text'];
+                    echo $txt;
+                 } */
+                 if(isset($_POST['text'])){
+                    $txt = $_POST['text'];
+                    echo strtoupper ($txt);
+                 }
+                 
+                 ?>
+                 <form action="tutorial45.php" method="post">
+                    <input type="text" name="text" value="<?php echo $txt;?>">
+                    <input type="submit" value= "submit">
+
+                 </form> -->
+                 <?php
+                 if(isset($_POST['text'])){
+                    $txt = $_POST['text'];
+                    echo ucwords ($txt);
+                 }
+                 ?>
+
+                 <form action="phppractice.php" method="post">
+                    <input type="text" name ="text" value= "<?php echo $txt;?>">
+                    <input type="submit" value= "submit">
+                 </form>
+                 
                 
-                ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>

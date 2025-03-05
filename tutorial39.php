@@ -1,5 +1,6 @@
 <?php 
 session_start();
+//eta diye cookie delete kora hoy
 setcookie('visited', "", time() -3600);
 ?>
 <!DOCTYPE html>

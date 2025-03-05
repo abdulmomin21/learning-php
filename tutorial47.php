@@ -11,6 +11,7 @@ setcookie('visited', "", time() -3600);
             .maincontent{min-height: 400px;padding: 20px;}
             .phpcoding{width:900px;margin: auto;background: <?php echo"#ddd"?>;}
             .headeroption, .footeroption{background: red;color: #fff;text-align:center;padding: 20px; margin: 0;}
+            input[type= "text"]{width:250px}
         </style>
     </head>
     <body>
@@ -22,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                Explode & Implode Function
+                php require or require_once
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -31,16 +32,9 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-                  <?php
-                /*  $mystr = "we are learning php";
-                 print_r(explode(" ", $mystr)); */
-                /* $mystr = "we are learning php";
-                 $str = explode(" ", $mystr);
-                 echo $str[3]; */
-
-                 $mystr = array ("we", "are", "learning", "php");
-                 echo implode (", ", $mystr);
-                  ?>
+                <?php
+                   require_once "new.php";
+                ?>
                  
                 
             </section>
