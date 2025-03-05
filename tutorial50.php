@@ -33,16 +33,28 @@ setcookie('visited', "", time() -3600);
                 </span>
                 <hr>
                 <?php
-                $name = array(
-                    "momin" => 38,
-                    "imon"  => 45,
-                    "imran" => 23
-                );
-                print("<pre>");
-                print_r(array_change_key_case($name, CASE_LOWER));
-                print("</pre>");
+                    $name = array(
+                        array(
+                            'id'=>'200',
+                            'first_name'=>'abdul',
+                            'last_name'=>'momin'
+                        ),
+                        array(
+                            'id'=>'201',
+                            'first_name'=>'md',
+                            'last_name'=>'asiq'
+                        ),
+                        array(
+                            'id'=>'202',
+                            'first_name'=>'fazle',
+                            'last_name'=>'rabby'
+                        )
+                        );
+                        $lastname = array_column($name, 'last_name', 'id');
+                        print("<pre>");
+                        print_r($lastname);
+                        print("</pre>");
                 ?>
-                
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
