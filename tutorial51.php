@@ -33,28 +33,14 @@ setcookie('visited', "", time() -3600);
                 </span>
                 <hr>
                 <?php
-                $name = array(
-                    array(
-                        'id' => 200,
-                        'first_name' => 'abdul',
-                        'last_name' => 'momin'
-                    ),
-                    array(
-                        'id' => 201,
-                        'first_name' => 'km',
-                        'last_name' => 'masud'
-                    ),
-                    array(
-                        'id' => 202,
-                        'first_name' => 'md',
-                        'last_name' => 'imran'
-                    )
-                    );
-                    $lastname = array_column($name, 'last_name');
+                $name = array("akbor", "mamun", "delowar");
+                $department = array("computer science", "math", "physics");
 
-                    print("<pre>");
-                    print_r($lastname);
-                    print("</pre>");
+                $combine = array_combine($name, $department);
+
+                print("<pre>");
+                print_r($combine);
+                print("</pre>");
                 ?>
             </section>
             <section class="footeroption">
