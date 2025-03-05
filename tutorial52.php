@@ -33,13 +33,11 @@ setcookie('visited', "", time() -3600);
                 </span>
                 <hr>
                 <?php
-                $name = array ("momin","imon","imran");
-                $department = array("computer science","math", "physics");
-                
-                $combine = array_combine($name,$department);
+                $name = array("momin","mamun","kiron","momin","momin","momin","momin","mamin","mamin",);
+                $age = array ("30","30","30","30","30","30","20","20","20","20","33","33",);
 
                 print("<pre>");
-                print_r($combine);
+                print_r(array_count_values($age));
                 print("</pre>");
                 ?>
             </section>
