@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                php require or require_once
+                create an array
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
