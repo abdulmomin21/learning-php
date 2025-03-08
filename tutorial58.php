@@ -34,26 +34,20 @@ setcookie('visited', "", time() -3600);
                 <hr>
               <?php
               $array_one = array(
-                "w" => "tungsten",
-                "Sb"=> "antimony",
-                "I" => "iodine"
+                "a" => "red",
+                "b" => "white",
+                "c" => "blue",
+                "Sb"=> "antimony"
               );
               $array_two = array(
-                "w" => "tungsten",
-                "Sb"=> "antimony",
-                "I" => "Iodine",
-                "Mo"=> "molybdenum"
+                "a" => "red",
+                "b" => "blue",
+                "c" => "white"
               );
-              $array_three = array(
-                "w" => "tungsten",
-                "Sb"=> "antimony",
-                "I" => "Iodine",
-                
-              );
-             $result = array_intersect($array_one,$array_two,$array_three);
-             print("<pre>");
-             print_r($result);
-             print("</pre>");
+              $result = array_intersect_key($array_one,$array_two);
+              print("<pre>");
+              print_r($result);
+              print("</pre>");
               ?>
             </section>
             <section class="footeroption">
