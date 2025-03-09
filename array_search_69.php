@@ -22,7 +22,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_reverse
+                array_search
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -31,18 +31,24 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-            <?php
-            $arr = array("red","blue","yellow","black");
-            $result = array_reverse($arr);
+                <?php
+                $color_one = array(
+                    "a" => "red" ,
+                    "b" => "green",
+                    "c" => "blue"
+                );
+                if(isset($_POST['text'])){
+                    global $txt;
+                    $txt = $_POST['text'];
+                    $result = array_search($txt, $color_one);
+                    echo "you have searched by -> $txt and your key is ->$result";
+                }
+                ?>
 
-            print("<pre>");
-            print_r($arr);
-            print("</pre>");
-
-            print("<pre>");
-            print_r($result);
-            print("</pre>");
-            ?>
+            <form action="array_search_69.php" method="post">
+                <input type="text" name="text" value="<?php global $txt; echo $txt;?>">
+                <input type="submit" value="submit">
+            </form>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
