@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_intersect
+                array_key_exists
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -32,29 +32,18 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-              <?php
-              $array_one = array(
-                "w" => "tungsten",
-                "Sb"=> "antimony",
-                "I" => "iodine"
-              );
-              $array_two = array(
-                "w" => "tungsten",
-                "Sb"=> "antimony",
-                "I" => "Iodine",
-                "Mo"=> "molybdenum"
-              );
-              $array_three = array(
-                "w" => "tungsten",
-                "Sb"=> "antimony",
-                "I" => "Iodine",
-                
-              );
-             $result = array_intersect($array_one,$array_two,$array_three);
-             print("<pre>");
-             print_r($result);
-             print("</pre>");
-              ?>
+             <?php
+             $arr = array(
+              "name" => "abdul momin",
+              "age"  => "23"
+             );
+              if(array_key_exists("name", $arr)){
+                echo "key already exists";
+
+              }else { 
+                echo "key already not exists";
+              }
+             ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>

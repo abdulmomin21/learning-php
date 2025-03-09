@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_intersect
+                array_intersect_assoc
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');

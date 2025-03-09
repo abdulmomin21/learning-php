@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_diff_assoc
+                array_key_exists
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -32,32 +32,18 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-               <?php
-               $array_one = array (
-                "a" => "red",
-                "b" => "green",
-                "c" => "blue",
-                "d" => "yellow"
-               );
-               $array_two = array (
-                "e" => "red",
-                "f" => "green",
-                "g" => "blue"
-               );
-               $array_three = array (
-                "h" => "red",
-                "b" => "green",
-                "g" => "blue",
-                "j" => "yellow"
-               );
-               $differ = array_diff_assoc($array_one, $array_two, $array_three);
-
-               print("<pre>");
-               print_r($differ);
-               print("</pre>");
-
-
-               ?>
+              <?php
+              $car = array(
+                "volvo" => "xc90",
+                "bmw"   => "x5",
+                "toyota"=> "highlander"
+              );
+             /* $result = array_keys($car, "x5"); */
+              $result = array_keys($car);
+              print("<pre>");
+              print_r($result);
+              print("</pre>");
+              ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
