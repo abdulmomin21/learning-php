@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_keys
+                array_map
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -32,18 +32,31 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-              <?php
-              $car = array(
-                "volvo" => "xc90",
-                "bmw"   => "x5",
-                "toyota"=> "highlander"
-              );
-             /* $result = array_keys($car, "x5"); */
-              $result = array_keys($car);
-              print("<pre>");
-              print_r($result);
-              print("</pre>");
-              ?>
+                <?php
+
+               /* function myfunction($value){
+                    return($value+$value);
+                }
+                $arr = array(1,2,3,5);
+                $result = array_map("myfunction", $arr); */
+
+                function myfunction($value){
+                    $v = strtoupper($value);
+                    return $v;
+                }
+                $arr = array(
+                    "animal" => "cow",
+                    "type"   => "mammal"
+                );
+
+                $result = array_map("myfunction", $arr);
+
+                print("<pre>");
+                print_r($result);
+                print("</pre>");
+                ?>
+
+
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
