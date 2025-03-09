@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_map
+                array_replace
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -32,19 +32,18 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-                <?php
-                function myfunction($value){
-                    return ($value+$value);
-                }
-                $arr = array(1,2,3,4,5);
-                $result = array_map("myfunction", $arr);
+            <?php
+            $arr = array("red", "blue", "black","white");
+            $result = array_reverse($arr);
 
-                print("<pre>");
-                print_r($result);
-                print("</pre>");
-                ?>
+            print("<pre>");
+            print_r($arr);
+            print("</pre>");
 
-
+            print("<pre>");
+            print_r($result);
+            print("</pre>");
+            ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
