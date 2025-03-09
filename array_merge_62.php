@@ -23,7 +23,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_map
+                array_merge
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -32,17 +32,28 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-                <?php
-                function myfunction($value){
-                    return ($value+$value);
-                }
-                $arr = array(1,2,3,4,5);
-                $result = array_map("myfunction", $arr);
+               <?php
+              /* $arr_one = array("red", "green");
+               $arr_two = array("blue", "yellow"); */
 
-                print("<pre>");
-                print_r($result);
-                print("</pre>");
-                ?>
+                $arr_one = array(
+                    "a" => "red",
+                    "b" => "blue",
+                    "c" => "black"
+                );
+                $arr_two = array( 
+                    "a" => "white",
+                    "b" => "blue",
+                    "c" => "black"
+                );
+            
+
+               $result = array_merge($arr_one,$arr_two);
+
+               print ("<pre>");
+               print_r($result);
+               print("</pre>");
+               ?>
 
 
             </section>
