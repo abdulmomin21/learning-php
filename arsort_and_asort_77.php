@@ -22,7 +22,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                 array_walk
+                 arsort and asort
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -31,18 +31,18 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-              <?php
-
-              function myfunction($department,$name){
-                echo "$name comes from $department department <br>";
-              }
-              $name = array(
-                "akbor" => "math",
-                "momin" => "physics",
-                "imon"  => "chemistry"
-              );
-              array_walk($name,"myfunction");
-              ?>
+                <?php
+                    $num = array(
+                        "momin"   => "35",
+                        "mamun"   => "40",
+                        "delowar" => "30",
+                        "hassan"  => "28"
+                    );
+                    arsort($num);
+                    foreach($num as $name =>$age){
+                        echo "name: ".$name. ",age: ".$age. "<br>";
+                    }
+                ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
