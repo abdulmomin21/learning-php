@@ -11,7 +11,6 @@ setcookie('visited', "", time() -3600);
             .maincontent{min-height: 400px;padding: 20px;}
             .phpcoding{width:900px;margin: auto;background: <?php echo"#ddd"?>;}
             .headeroption, .footeroption{background: red;color: #fff;text-align:center;padding: 20px; margin: 0;}
-            input[type= "text"]{width:250px}
         </style>
     </head>
     <body>
@@ -23,7 +22,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                array_multisort
+                 array_unique
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -32,28 +31,15 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-               <?php
-            /*   $arr_one = array("dog", "cat");
-               array_multisort($arr_one);
+                <?php
+                $color = array("red", "green", "yellow", "blue", "black", "white", "green", "green", "green", "green");
 
-               print("<pre>");
-               print_r($arr_one);
-               print("</pre>"); */
+                $result = array_unique($color);
 
-               $arr_one = array ("dog", "cat");
-               $arr_two = array("lion", "tiger");
-
-               array_multisort($arr_one,SORT_ASC,$arr_two,SORT_ASC);
-
-               print("<pre>");
-               print_r($arr_one);
-               print("</pre>");
-
-               print("<pre>");
-               print_r($arr_two);
-               print("</pre>");
-               ?>
-              
+                print("<pre>");
+                print_r($result);
+                print("</pre>");
+                ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
