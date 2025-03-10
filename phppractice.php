@@ -22,7 +22,7 @@ setcookie('visited', "", time() -3600);
 
             <section class="maincontent">
                 <hr>
-                 array_walk
+                  compact
                 <span style="float:right">
                 <?php
                 date_default_timezone_set('asia/dhaka');
@@ -31,18 +31,17 @@ setcookie('visited', "", time() -3600);
 
                 </span>
                 <hr>
-              <?php
+                <?php
+                $name = "momin";
+                $dep = "physics";
+                $coder = "java";
 
-              function myfunction($department,$name){
-                echo "$name comes from $department department <br>";
-              }
-              $name = array(
-                "akbor" => "math",
-                "momin" => "physics",
-                "imon"  => "chemistry"
-              );
-              array_walk($name,"myfunction");
-              ?>
+                $result = compact ("name", "dep", "coder");
+
+                print("<pre>");
+                print_r($result);
+                print("</pre>");
+                ?>
             </section>
             <section class="footeroption">
                 <h2><?php echo"www.google.com //momin"?></h2>
