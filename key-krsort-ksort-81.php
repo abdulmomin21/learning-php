@@ -32,15 +32,15 @@ setcookie('visited', "", time() -3600);
                 </span>
                 <hr>
                 <?php
-                $name = "delowar";
-                $dep = "physics";
-                $coder = "java";
-
-                $result = compact ("name","dep","coder");
-
-                print ("<pre>");
-                print_r($result);
-                print("</pre>");
+                $coder = array(
+                    "delowar" => "30",
+                    "akbor"   => "35",
+                    "mamun"   => "32"
+                );
+                krsort($coder);
+                foreach($coder as $key=>$value){
+                    echo "name: ".$key.", age: ".$value."<br>";
+                }
                 ?>
             </section>
             <section class="footeroption">
@@ -52,4 +52,4 @@ setcookie('visited', "", time() -3600);
 
         </div>
     </body>
-</html>
+</html>               
