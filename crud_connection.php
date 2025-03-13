@@ -11,5 +11,6 @@ $conn = new mysqli($hostname, $username, $password);
         echo "connected!";
     }
     $conn->close();
+    /*connection close kore dibe ei function */
 
 ?>
