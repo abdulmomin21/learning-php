@@ -26,7 +26,7 @@ $conn = mysqli_connect('localhost','root','','momin');
     <body>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                     </div>
                     <div class="col-sm-6 pt-4 mt-4">
                         <h3>registraion from </h3>
