@@ -1,31 +1,17 @@
 <?php
 
     $conn = mysqli_connect('localhost', 'root', '', 'momin');
+
     if(isset($_GET['deleteid'])){
         $deleteid = $_GET['deleteid'];
 
         $sql = "DELETE FROM sector1 WHERE id = $deleteid";
 
         if(mysqli_query($conn, $sql) == TRUE){
-            header('location:crudpractice3.php');
-        }
-    };
-
-if(isset($_POST['submit'])){
-    $firstname = $_POST['firstname'];
-    $lastname  = $_POST['lastname'];
-    $email     = $_POST['email'];
-
-$sql = "INSERT INTO sector1 (firstname, lastname, email)
-        VALUES ('$firstname', '$lastname','$email')";
-
-        if(mysqli_query($conn, $sql) == TRUE){
-            echo "data inserted";
-            header ('location:crudpractice3.php');
-        }else{
-            echo "not inserted";
+            header('location:crudview1.php');
         }
     }
+
 ?>
 
 <html>
@@ -35,29 +21,6 @@ $sql = "INSERT INTO sector1 (firstname, lastname, email)
     </head>
 
     <body>
-        <div class="container">
-            <div class ="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6 pt-4 mt-4 border border-success">
-                    <h3>registration form</h3>
-                <form action="crudpractice3.php" method="POST">
-                    firstname : <br>
-                    <input type="text" name="firstname"><br><br>
-                    lastname : <br>
-                    <input type="text" name="lastname"><br><br>
-                    email : <br>
-                    <input type="email" name= "email"><br><br>
-                    <input type="submit" value= "submit" name="submit" class="btn btn-success">
-                </form>
-
-                </div>
-            </div>
-        </div>
-        
-
-
-    
-    
         <div class="container">
             <div class ="row">
                 <div class="col-sm-1"></div>
@@ -89,10 +52,10 @@ $sql = "INSERT INTO sector1 (firstname, lastname, email)
                    <td>$email</td>
                    <td>
                         <span class='btn btn-success'>
-                           <a href='crudpractice3.php?id=$id' class='text-white text-decoration-none'> edit </a>
+                           <a href='crudedit.php?id=$id' class='text-white text-decoration-none'> edit </a>
                         </span>
                         <span class='btn btn-danger'>
-                            <a href='crudpractice3.php?deleteid=$id' class='text-white text-decoration-none'>
+                            <a href='crudview1.php?deleteid=$id' class='text-white text-decoration-none'>
                             delete
                             </a>
                         </span>
@@ -106,11 +69,6 @@ $sql = "INSERT INTO sector1 (firstname, lastname, email)
                 <div class="col-sm-1"></div>
             </div>
         </div>
-   
-
-
-
     </body>
 </html>
-
 
