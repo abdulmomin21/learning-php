@@ -49,7 +49,7 @@
 
     $data = mysqli_query($conn, $sql);
 
-    while($row  = mysqli_fetch_assoc($data)){
+   while($row  = mysqli_fetch_assoc($data)){
 
     $firstname = $row['firstname'];
     $lastname  = $row['lastname'];
@@ -60,7 +60,7 @@
 
     echo "<tr><td>$firstname</td><td>$lastname</td><td>$email</td>";
     echo "<td><img src='images/$image' class='img'></td></tr>";
-    }
+   }
  ?>
     </table>
    </body>
