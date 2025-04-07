@@ -10,6 +10,19 @@ if (isset($_GET['deleteid'])) {
         header('location:crudall.php');
     }
 };
+if (isset($_GET['editid'])) {
+    $editid = $_GET['editid'];
+
+    // Query to fetch data for the given `editid`
+    $sql = mysqli_query($conn, "SELECT * FROM `sector1` WHERE `id` = '$editid'");
+    $row = mysqli_fetch_assoc($sql);
+
+    // If no data is found, you can redirect (optional)
+    if (!$row) {
+        header('location:crudall.php');
+        exit; // Stop the script from running further
+    }
+}
 
 if (isset($_POST['submit'])) {
     $firstname = $_POST['firstname'];
@@ -58,13 +71,13 @@ if (isset($_POST['submit'])) {
 
                     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
                         firstname : <br>
-                        <input type="text" name="firstname"><br><br>
+                        <input type="text" name="firstname"value="<?php echo isset($row['firstname']) ? $row['firstname'] : ''; ?>"><br><br>
                         lastname : <br><br>
-                        <input type="text" name="lastname"><br><br>
+                        <input type="text" name="lastname"value="<?php echo isset($row['firstname']) ? $row['lastname'] : ''; ?>"><br><br>
                         eamil : <br>
-                        <input type="email" name="email"><br><br>
+                        <input type="email" name="email" value="<?php echo isset($row['email']) ? $row['email'] : ''; ?>"><br><br>
                         picture : <br>
-                        <input type="file" name="image" class="img"><br><br>
+                        <input type="file" name="image" class="img" value="<?php echo isset($row['image']) ? $row['image'] : ''; ?>"><br><br>
                         <input type="submit" value="submit" name="submit" class="btn btn-success">
                     </form>
                 </div>
@@ -113,7 +126,7 @@ if (isset($_POST['submit'])) {
         <td><img src='images/$image' class='img'></td>
         <td>
         <span class='btn btn-success'>
-        <a href='crudall.php?id=$id' class='text-white text-decoration-none'> edit </a>
+        <a href='crudall.php?editid=$id' class='text-white text-decoration-none'> edit </a>
         </span>
         <span class='btn btn-danger'>
             <a href='crudall.php?deleteid=$id' class='text-white text-decoration-none'>
