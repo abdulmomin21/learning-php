@@ -1,17 +1,17 @@
 <?php
 
-    $conn = mysqli_connect('localhost', 'root', '', 'momin');
-    if(isset($_GET['deleteid'])){
-        $deleteid = $_GET['deleteid'];
+$conn = mysqli_connect('localhost', 'root', '', 'momin');
+if (isset($_GET['deleteid'])) {
+    $deleteid = $_GET['deleteid'];
 
-        $sql = "DELETE FROM sector1 WHERE id = $deleteid";
+    $sql = "DELETE FROM sector1 WHERE id = $deleteid";
 
-        if(mysqli_query($conn, $sql) == TRUE){
-            header('location:crudall.php');
-        }
-    };
+    if (mysqli_query($conn, $sql) == TRUE) {
+        header('location:crudall.php');
+    }
+};
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $firstname = $_POST['firstname'];
     $lastname  = $_POST['lastname'];
     $email     = $_POST['email'];
@@ -20,71 +20,74 @@ if(isset($_POST['submit'])){
     $tmpname   = $_FILES['image']['tmp_name'];
     $file      = $_FILES['upfile']['type'];
 
-    $uploc     = 'images/'.$imagename;
-    
+    $uploc     = 'images/' . $imagename;
+
 
     $sql = "INSERT INTO sector1(firstname,lastname,email,image)
           VALUES ('$firstname','$lastname','$email','$imagename')";
 
-      if(mysqli_query($conn,$sql) == TRUE){
-          move_uploaded_file($tmpname,$uploc);
-          header('location:crudall.php');
-          echo "data inserted";
-
-      }else{
-          echo "data not inserted";
-      }
+    if (mysqli_query($conn, $sql) == TRUE) {
+        move_uploaded_file($tmpname, $uploc);
+        header('location:crudall.php');
+        echo "data inserted";
+    } else {
+        echo "data not inserted";
     }
+}
 ?>
 
 <html>
-    <head>
+
+<head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-                .img{width:100px;height:auto}
-        </style>
-    </head>
+        .img {
+            width: 100px;
+            height: auto
+        }
+    </style>
+</head>
 
-    <body>
-        <div class="container">
-            <div class ="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6 pt-4 mt-4 border border-success">
-                    <div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 pt-4 mt-4 border border-success">
+                <div>
                     <h3>registration form</h3>
 
-                    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" enctype ="multipart/form-data">
+                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
                         firstname : <br>
-                        <input type="text" name="firstname" value="<?php echo $firstname ?>"><br><br>
+                        <input type="text" name="firstname"><br><br>
                         lastname : <br><br>
-                        <input type="text" name="lastname" value="<?php echo $lastname ?>" ><br><br>
+                        <input type="text" name="lastname"><br><br>
                         eamil : <br>
-                        <input type="email" name="email" value="<?php echo $email ?>"><br><br>
+                        <input type="email" name="email"><br><br>
                         picture : <br>
-                        <input type="file" name= "image" class="img" value="<?php echo $image ?>"><br><br>
-                        <input type="submit" value="submit" name ="submit" class="btn btn-success">
+                        <input type="file" name="image" class="img"><br><br>
+                        <input type="submit" value="submit" name="submit" class="btn btn-success">
                     </form>
-                    </div>
-
                 </div>
+
             </div>
         </div>
-    
-<div class="container">
-    <div class ="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-12 pt-4 mt-4 border border-success">
-            <h3 class="text-center p-2 m-2 bg-success text-white">usser information</h3>
-            <?php
+    </div>
 
-$sql = "SELECT * FROM sector1 ORDER BY id DESC";
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-12 pt-4 mt-4 border border-success">
+                <h3 class="text-center p-2 m-2 bg-success text-white">usser information</h3>
+                <?php
 
-$query = mysqli_query($conn, $sql);
+                $sql = "SELECT * FROM sector1 ORDER BY id DESC";
+
+                $query = mysqli_query($conn, $sql);
 
 
 
 
-    echo "<table class='table table-success'>
+                echo "<table class='table table-success'>
          <tr>
          <th>id</th>
          <th>firstname</th>
@@ -94,15 +97,15 @@ $query = mysqli_query($conn, $sql);
          <th>action</th>
          </tr>";
 
-         while($data  = mysqli_fetch_assoc($query)){
+                while ($data  = mysqli_fetch_assoc($query)) {
 
-            $id        = $data['id'];
-            $firstname = $data['firstname'];
-            $lastname  = $data['lastname'];
-            $email     = $data['email'];
-            $image     = $data['image'];
+                    $id        = $data['id'];
+                    $firstname = $data['firstname'];
+                    $lastname  = $data['lastname'];
+                    $email     = $data['email'];
+                    $image     = $data['image'];
 
-    echo "<tr>
+                    echo "<tr>
         <td>$id</td>
         <td>$firstname</td>
         <td>$lastname</td>
@@ -119,17 +122,18 @@ $query = mysqli_query($conn, $sql);
         </span>
             </td>
             
-        </tr>" ;
-}
+        </tr>";
+                }
 
-                  /* echo $id.' '.$firstname.' '.$lastname.' '.$email, "<br>"; */
-            
-            ?>
+                /* echo $id.' '.$firstname.' '.$lastname.' '.$email, "<br>"; */
+
+                ?>
+            </div>
+            <div class="col-sm-1"></div>
         </div>
-        <div class="col-sm-1"></div>
     </div>
-</div>
 
 
-    </body>
+</body>
+
 </html>
