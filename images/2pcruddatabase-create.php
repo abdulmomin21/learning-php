@@ -12,7 +12,9 @@ $sql = "CREATE DATABASE imon";
 
 if($coon->query($sql)== TRUE){
     echo "imon created";
-    
-}
+    }else{
+        echo $coon->error;
+    }
+
 $coon->close(); 
 ?>
