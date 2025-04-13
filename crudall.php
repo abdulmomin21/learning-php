@@ -1,26 +1,23 @@
 <?php
 
 $conn = mysqli_connect('localhost', 'root', '', 'momin');
+
 if (isset($_GET['deleteid'])) {
     $deleteid = $_GET['deleteid'];
-
     $sql = "DELETE FROM sector1 WHERE id = $deleteid";
-
     if (mysqli_query($conn, $sql) == TRUE) {
         header('location:crudall.php');
     }
-};
+}
+
 if (isset($_GET['editid'])) {
     $editid = $_GET['editid'];
-
-    // Query to fetch data for the given `editid`
     $sql = mysqli_query($conn, "SELECT * FROM `sector1` WHERE `id` = '$editid'");
     $row = mysqli_fetch_assoc($sql);
 
-    // If no data is found, you can redirect (optional)
     if (!$row) {
         header('location:crudall.php');
-        exit; // Stop the script from running further
+        exit;
     }
 }
 
@@ -28,26 +25,39 @@ if (isset($_POST['submit'])) {
     $firstname = $_POST['firstname'];
     $lastname  = $_POST['lastname'];
     $email     = $_POST['email'];
+    $image     = $_FILES['image']['name'];
 
-    $imagename = $_FILES['image']['name'];
-    $tmpname   = $_FILES['image']['tmp_name'];
-    $file      = $_FILES['upfile']['type'];
-
-    $uploc     = 'images/' . $imagename;
-
-
-    $sql = "INSERT INTO sector1(firstname,lastname,email,image)
-          VALUES ('$firstname','$lastname','$email','$imagename')";
-
-    if (mysqli_query($conn, $sql) == TRUE) {
-        move_uploaded_file($tmpname, $uploc);
-        header('location:crudall.php');
-        echo "data inserted";
+    // Check if any field is blank
+    if (empty($firstname) || empty($lastname) || empty($email) || empty($image)) {
+        echo "All fields are required! Please fill in all fields.";
     } else {
-        echo "data not inserted";
+
+        // Check if the email already exists in the database
+        $emailcheck = mysqli_query($conn, "SELECT * FROM `sector1` WHERE email = '$email'");
+        
+        if (mysqli_num_rows($emailcheck) > 0) {
+            echo "Email already exists! Please choose a different email.";
+        } else {
+            // Proceed with inserting the new record if email is unique
+            $imagename = $_FILES['image']['name'];
+            $tmpname   = $_FILES['image']['tmp_name'];
+            $uploc     = 'images/' . $imagename;
+
+            // Insert data into the database
+            $sql = "INSERT INTO sector1(firstname,lastname,email,image)
+                    VALUES ('$firstname','$lastname','$email','$imagename')";
+
+            if (mysqli_query($conn, $sql) == TRUE) {
+                move_uploaded_file($tmpname, $uploc);
+                header('location:crudall.php');
+            } else {
+                echo "Data not inserted!";
+            }
+        }
     }
 }
 ?>
+
 
 <html>
 

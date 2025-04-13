@@ -17,7 +17,7 @@
 
     }
 ?>
-<form action="2crudinsert.php" method="POST">
+<form action="2pcrudinsert.php" method="POST">
     firstname : <br>
     <input type="text" name="firstname"><br><br>
     lastname : <br>
