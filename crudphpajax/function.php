@@ -43,9 +43,9 @@ function edit(){
 }
 
 function delete(){
-    global $_conn;
+    global $conn;
 
-    $id = $POST["action"];
+    $id = $_POST["action"];
 
     $query = "DELETE FROM users WHERE id = $id";
     mysqli_query($conn, $query);

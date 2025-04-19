@@ -10,7 +10,7 @@
     <form autocomplete="off" action="" method="post">
         <?php
         require 'config.php';
-        $id = $GET["id"];
+        $id = $_GET["id"];
         $rows = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id = $id"));
         ?>
         <input type="hidden" id = "id" value="<?php echo $rows['id']; ?>">
