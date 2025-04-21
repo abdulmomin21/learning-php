@@ -20,10 +20,10 @@
                 <input type="text" id="name" value=""><br><br>
                 <label for="">email :</label>
                 <input type="text" id="email" value=""><br><br>
-                <button type="button" onclick="submitData('insert');" class="btn btn-success">insert data</button>
+                <button type="button" onclick="submitData('insert');">insert data</button>
             </form><br>
             <a href="index.php">go to index</a>
-            <?php require 'script.php'; ?>
+            <?php require 'jsscript.php'; ?>
                 </div>
             </div>
         </div>
