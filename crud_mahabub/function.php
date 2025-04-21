@@ -13,18 +13,21 @@ if(isset($_POST["action"])){
         delete();
     }
 }
+
 function insert(){
     global $conn;
 
     $name = $_POST["name"];
     $email = $_POST["email"];
-    $gender = $_POST["gender"];
+    $number = $_POST["number"];
+    $password = $_POST["password"];
 
-    $query = "INSERT INTO users VALUES('', '$name', '$email', '$gender')";
+    $query = "INSERT INTO crud VALUES('', '$name', '$email', '$number', '$password')";
     mysqli_query($conn, $query);
     echo "inserted successfully";
     
 }
+
 
 function edit(){
     global $conn;
@@ -32,20 +35,21 @@ function edit(){
     $id = $_POST["id"];
     $name = $_POST["name"];
     $email = $_POST["email"];
+    $number = $_POST["number"];
+    $password = $_POST["password"];
 
-    $query = "UPDATE project SET name = '$name', email = '$email', WHERE id = $id";
+    $query = "UPDATE crud SET name = '$name', email = '$email', number = '$number', password = '$password' WHERE id = $id";
     mysqli_query($conn, $query);
-    echo "Updated Successed";
+    echo "Updated Successfully";
 
 }
-
 function delete(){
     global $conn;
 
-    $id = $_POST["action"];
+    $id = $_POST["id"];
 
-    $query = "DELETE FROM project WHERE id = $id";
+    $query = "DELETE FROM crud WHERE id = $id";
     mysqli_query($conn, $query);
-    echo "Deleted Successed";
+    echo "Deleted Successfully";
 }
 ?>

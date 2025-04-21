@@ -1,1 +1,1 @@
-<?php $conn = mysqli_connect("localhost", "root", "", "mahabub")?>
+<?php $conn = mysqli_connect("localhost", "root", "", "db")?>
