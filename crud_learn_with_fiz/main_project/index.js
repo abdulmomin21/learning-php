@@ -18,3 +18,24 @@ function OnSaveUpdate()
         }
     }) 
 }
+
+function OnSelect()
+{
+    $.ajax({
+        url:"OnSelect.php",
+        method:"GET",
+
+        success:function(res)
+        {
+         $("#result").html(res);
+        }
+    })
+}
+window.addEventListener('load',function(){
+    OnSelect();
+});
+
+ function OnDelete(id);
+ {
+     alert(id)
+ }

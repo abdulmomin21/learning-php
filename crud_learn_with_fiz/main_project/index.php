@@ -45,6 +45,25 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <table class="table">
+        <thead>
+          <th>sl</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Dept</th>
+          <th>Section</th>
+        </thead>
+        <tbody id="result">
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
